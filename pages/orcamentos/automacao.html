@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Solicite um orçamento para automação de processos - Carmo.dev">
+    <title>Solicitar Orçamento - Automação | Carmo.dev</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/fonts.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="../../index.html" class="logo" aria-label="Carmo.dev - Página inicial">
+                <img src="../../assets/images/logo.png" alt="Carmo.dev Logo" width="150" height="40">
+            </a>
+            <nav class="header_nav" aria-label="Menu principal">
+                <button class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-list">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="../../index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="../../index.html#sobre" class="nav-link">Sobre mim</a></li>
+                    <li><a href="../../index.html#servicos" class="nav-link">Serviços</a></li>
+                    <li><a href="../../index.html#portfolio" class="nav-link">Portfólio</a></li>
+                    <li><a href="../../index.html#contato" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="quote-header">
+            <div class="quote-header-content">
+                <h1 class="quote-header-title">Automação</h1>
+                <p class="quote-header-subtitle">Automatize processos e integre sistemas para aumentar a eficiência do seu negócio. Reduza custos e otimize sua operação.</p>
+                <div class="quote-header-features">
+                    <div class="quote-header-feature">
+                        <i class="fas fa-robot"></i>
+                        <span>Automação Inteligente</span>
+                    </div>
+                    <div class="quote-header-feature">
+                        <i class="fas fa-sync"></i>
+                        <span>Processos Otimizados</span>
+                    </div>
+                    <div class="quote-header-feature">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Maior Eficiência</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="quote-content">
+                <div class="quote-info">
+                    <h3>O que está incluído</h3>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Análise completa dos processos</li>
+                        <li><i class="fas fa-check"></i> Desenvolvimento de automações personalizadas</li>
+                        <li><i class="fas fa-check"></i> Integração com sistemas existentes</li>
+                        <li><i class="fas fa-check"></i> Automação de e-mails e notificações</li>
+                        <li><i class="fas fa-check"></i> Relatórios automatizados</li>
+                        <li><i class="fas fa-check"></i> Dashboard de monitoramento</li>
+                        <li><i class="fas fa-check"></i> Documentação completa</li>
+                        <li><i class="fas fa-check"></i> Suporte técnico</li>
+                        <li><i class="fas fa-check"></i> Treinamento da equipe</li>
+                    </ul>
+                </div>
+
+                <form class="quote-form" id="quoteForm">
+                    <div class="form-group">
+                        <label for="name">Nome completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="type">Tipo de Automação</label>
+                        <select id="type" name="type" required>
+                            <option value="">Selecione uma opção</option>
+                            <option value="process">Automação de Processos</option>
+                            <option value="email">Automação de E-mails</option>
+                            <option value="data">Processamento de Dados</option>
+                            <option value="integration">Integração de Sistemas</option>
+                            <option value="other">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deadline">Prazo desejado</label>
+                        <select id="deadline" name="deadline" required>
+                            <option value="">Selecione uma opção</option>
+                            <option value="urgente">Urgente (até 1 semana)</option>
+                            <option value="normal">Normal (2-3 semanas)</option>
+                            <option value="flexivel">Flexível (1 mês ou mais)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Funcionalidades desejadas</label>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" name="features" value="reports">
+                                Relatórios Automáticos
+                            </label>
+                            <label>
+                                <input type="checkbox" name="features" value="notifications">
+                                Notificações
+                            </label>
+                            <label>
+                                <input type="checkbox" name="features" value="dashboard">
+                                Dashboard
+                            </label>
+                            <label>
+                                <input type="checkbox" name="features" value="api">
+                                Integração com APIs
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Detalhes do projeto</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Solicitar Orçamento</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="../../assets/images/logo.png" alt="Carmo.dev Logo" class="footer-logo" width="120" height="32">
+                    <p class="footer-description">Transformando ideias em soluções digitais</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="GitHub" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 Carmo.dev. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+        <section class="wrapperContainer wrapperContainer-light wrapperContainer-padded">
+            <div class="container">
+                <h1 class="section_title">Solicite um Orçamento</h1>
+                <h2 class="section_subtitle">Automação de Processos</h2>
+                
+                <div class="quote-content">
+                    <div class="quote-info">
+                        <h3>O que está incluído?</h3>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> Análise completa dos processos</li>
+                            <li><i class="fas fa-check"></i> Desenvolvimento de automações personalizadas</li>
+                            <li><i class="fas fa-check"></i> Integração com sistemas existentes</li>
+                            <li><i class="fas fa-check"></i> Automação de e-mails e notificações</li>
+                            <li><i class="fas fa-check"></i> Relatórios automatizados</li>
+                            <li><i class="fas fa-check"></i> Dashboard de monitoramento</li>
+                            <li><i class="fas fa-check"></i> Documentação completa</li>
+                            <li><i class="fas fa-check"></i> Suporte técnico</li>
+                            <li><i class="fas fa-check"></i> Treinamento da equipe</li>
+                        </ul>
+                    </div>
+
+                    <form class="quote-form" id="quoteForm">
+                        <div class="form-group">
+                            <label for="name">Nome Completo*</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-mail*</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Telefone*</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Nome da Empresa</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="type">Tipo de Automação</label>
+                            <select id="type" name="type">
+                                <option value="process">Automação de Processos</option>
+                                <option value="email">Automação de E-mails</option>
+                                <option value="data">Processamento de Dados</option>
+                                <option value="integration">Integração de Sistemas</option>
+                                <option value="other">Outro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="features">Funcionalidades desejadas</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="features" value="reports"> Relatórios Automáticos</label>
+                                <label><input type="checkbox" name="features" value="notifications"> Notificações</label>
+                                <label><input type="checkbox" name="features" value="dashboard"> Dashboard</label>
+                                <label><input type="checkbox" name="features" value="api"> Integração com APIs</label>
+                                <label><input type="checkbox" name="features" value="scheduling"> Agendamento de Tarefas</label>
+                                <label><input type="checkbox" name="features" value="monitoring"> Monitoramento</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="systems">Sistemas a serem integrados</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="systems" value="erp"> ERP</label>
+                                <label><input type="checkbox" name="systems" value="crm"> CRM</label>
+                                <label><input type="checkbox" name="systems" value="email"> E-mail</label>
+                                <label><input type="checkbox" name="systems" value="sheets"> Planilhas</label>
+                                <label><input type="checkbox" name="systems" value="other"> Outros</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="deadline">Prazo desejado para entrega</label>
+                            <select id="deadline" name="deadline">
+                                <option value="urgent">O mais rápido possível</option>
+                                <option value="1-2">1-2 meses</option>
+                                <option value="2-3">2-3 meses</option>
+                                <option value="3+">Mais de 3 meses</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Orçamento estimado</label>
+                            <select id="budget" name="budget">
+                                <option value="basic">Até R$ 3.000</option>
+                                <option value="standard">R$ 3.000 - R$ 7.000</option>
+                                <option value="premium">R$ 7.000 - R$ 15.000</option>
+                                <option value="enterprise">Acima de R$ 15.000</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mensagem adicional</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Solicitar Orçamento</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="wrapperContainer wrapperContainer-dark">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../../assets/images/logo.png" alt="Carmo.dev Logo">
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p class="footer-copyright">&copy; 2024 Carmo.dev. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html> 
