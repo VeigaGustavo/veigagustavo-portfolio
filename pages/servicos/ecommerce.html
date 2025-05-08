@@ -3,128 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Desenvolvimento de E-commerce - Carmo.dev">
-    <title>E-commerce - Carmo.dev</title>
-    
+    <meta name="description" content="Desenvolvimento de lojas virtuais personalizadas - Soluções completas em e-commerce para seu negócio digital.">
+    <title>E-commerce | Carmo.dev</title>
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
-    
+    <link rel="apple-touch-icon" href="../../assets/images/apple-touch-icon.png">
+
     <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/fonts.css">
     <link rel="stylesheet" href="../../assets/css/reset.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
-    
+    <link rel="stylesheet" href="_styles/servicos.css">
+    <link rel="stylesheet" href="_styles/quote-form.css">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="wrapperContainer wrapperContainer-dark wrapperContainer-fixed">
-        <header class="header container">
-            <a href="/" class="logo">
-                <img src="../../assets/images/logo.png" alt="Carmo.dev Logo">
-            </a>
-
-            <nav class="header_nav">
-                <button class="mobile-menu-btn" aria-label="Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul class="nav-list">
-                    <li><a href="/#home">Home</a></li>
-                    <li><a href="/#sobre">Sobre mim</a></li>
-                    <li><a href="/#servicos">Serviços</a></li>
-                    <li><a href="/#portfolio">Portfólio</a></li>
-                    <li><a href="/#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </header>
-    </div>
+    <!-- Include Header -->
+    <div id="header"></div>
 
     <main>
-        <section class="wrapperContainer wrapperContainer-light wrapperContainer-padded">
+        <!-- Hero Section -->
+        <section class="service-hero" aria-label="Introdução do serviço">
             <div class="container">
-                <h1 class="section_title">Desenvolvimento de E-commerce</h1>
-                
-                <div class="service-detail">
-                    <div class="service-detail-content">
-                        <h2>Transforme seu negócio com uma loja virtual profissional</h2>
-                        
-                        <div class="service-features">
-                            <div class="feature">
-                                <i class="fas fa-shopping-cart"></i>
-                                <h3>Catálogo de Produtos</h3>
-                                <p>Organize seus produtos com categorias, filtros e busca avançada.</p>
-                            </div>
-                            
-                            <div class="feature">
-                                <i class="fas fa-credit-card"></i>
-                                <h3>Pagamentos Seguros</h3>
-                                <p>Integração com múltiplas formas de pagamento e gateways seguros.</p>
-                            </div>
-                            
-                            <div class="feature">
-                                <i class="fas fa-truck"></i>
-                                <h3>Gestão de Entregas</h3>
-                                <p>Controle de estoque e integração com transportadoras.</p>
-                            </div>
-                            
-                            <div class="feature">
-                                <i class="fas fa-chart-line"></i>
-                                <h3>Relatórios e Analytics</h3>
-                                <p>Acompanhe o desempenho da sua loja com métricas detalhadas.</p>
-                            </div>
-
-                            <div class="feature">
-                                <i class="fas fa-headset"></i>
-                                <h3>Suporte Técnico</h3>
-                                <p>Suporte especializado para resolver qualquer problema técnico.</p>
-                            </div>
-
-                            <div class="feature">
-                                <i class="fas fa-graduation-cap"></i>
-                                <h3>Treinamento</h3>
-                                <p>Capacitação completa para sua equipe gerenciar a loja virtual.</p>
-                            </div>
+                <div class="service-hero-content" data-aos="fade-up">
+                    <h1 class="service-title">E-commerce</h1>
+                    <p class="service-subtitle"><strong>Desenvolvimento de lojas virtuais personalizadas</strong> e otimizadas para converter visitantes em clientes.</p>
+                    
+                    <div class="service-features" role="list">
+                        <div class="service-feature" role="listitem" data-aos="fade-up" data-aos-delay="100">
+                            <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                            <span>Vendas Online</span>
                         </div>
-
-                        <div class="service-benefits">
-                            <h3>Benefícios</h3>
-                            <ul>
-                                <li>Design responsivo e moderno</li>
-                                <li>Otimizado para SEO</li>
-                                <li>Integração com redes sociais</li>
-                                <li>Painel administrativo intuitivo</li>
-                                <li>Suporte técnico especializado</li>
-                            </ul>
+                        <div class="service-feature" role="listitem" data-aos="fade-up" data-aos-delay="200">
+                            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                            <span>Mobile First</span>
                         </div>
-
-                        <div class="service-cta">
-                            <a href="/#contato" class="btn btn-primary">Solicitar Orçamento</a>
+                        <div class="service-feature" role="listitem" data-aos="fade-up" data-aos-delay="300">
+                            <i class="fas fa-chart-line" aria-hidden="true"></i>
+                            <span>Alta Conversão</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- O que é E-commerce -->
+        <section class="service-details" aria-labelledby="ecommerce-definition">
+            <div class="container">
+                <div class="service-grid">
+                    <div class="service-info" data-aos="fade-right">
+                        <h2 id="ecommerce-definition" class="section-title small">O que é E-commerce?</h2>
+                        <p>
+                            Um e-commerce é um site criado especialmente para vender produtos ou serviços pela internet. Ele funciona como uma loja de verdade, mas no ambiente digital: o cliente pode acessar, ver os produtos, escolher o que quer, colocar no carrinho e finalizar a compra — tudo isso sem sair de casa.
+                        </p>
+                        <p>
+                            Esse tipo de site costuma ter páginas com categorias de produtos, filtros para facilitar a busca, imagens detalhadas, descrições completas, preços e, às vezes, até depoimentos de outros compradores. Também há um sistema de carrinho de compras e uma página segura de pagamento, onde o cliente pode pagar com <strong>cartão de crédito</strong>, <strong>Pix</strong>, <strong>boleto bancário</strong> ou outras formas.
+                        </p>
+                        <p>
+                            Além da parte que o cliente vê, o e-commerce também tem um <strong>painel administrativo</strong> só para você, onde é possível cadastrar novos produtos, atualizar preços, acompanhar os pedidos que foram feitos, organizar o estoque, gerar relatórios de vendas e até configurar cupons de desconto.
+                        </p>
+                        <p>
+                            Tudo é feito para que o processo de compra e venda aconteça de forma <strong>organizada</strong>, <strong>segura</strong> e <strong>prática</strong> — tanto para quem compra quanto para quem vende.
+                        </p>
+                    </div>
+                    <div class="service-image" data-aos="fade-left">
+                        <img src="../../assets/images/ecommerce-illustration.svg" alt="Ilustração de e-commerce" class="floating" width="500" height="400">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Importância -->
+        <section class="process-section" aria-labelledby="importance-title">
+            <div class="container">
+                <h2 id="importance-title" class="section-title" data-aos="fade-up">Por que ter uma Loja Virtual?</h2>
+                <div class="process-timeline" role="list">
+                    <div class="process-step" role="listitem" data-aos="fade-up" data-aos-delay="100">
+                        <div class="step-number" aria-hidden="true">1</div>
+                        <h3>Alcance Global</h3>
+                        <p>Venda para clientes em qualquer lugar do mundo, 24 horas por dia</p>
+                    </div>
+                    <div class="process-step" role="listitem" data-aos="fade-up" data-aos-delay="200">
+                        <div class="step-number" aria-hidden="true">2</div>
+                        <h3>Custo Reduzido</h3>
+                        <p>Menos despesas operacionais comparado a uma loja física</p>
+                    </div>
+                    <div class="process-step" role="listitem" data-aos="fade-up" data-aos-delay="300">
+                        <div class="step-number" aria-hidden="true">3</div>
+                        <h3>Escalabilidade</h3>
+                        <p>Crescimento do negócio sem grandes investimentos em infraestrutura</p>
+                    </div>
+                    <div class="process-step" role="listitem" data-aos="fade-up" data-aos-delay="400">
+                        <div class="step-number" aria-hidden="true">4</div>
+                        <h3>Análise de Dados</h3>
+                        <p>Insights valiosos sobre o comportamento dos clientes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ferramentas -->
+        <section class="service-details" aria-labelledby="tools-title">
+            <div class="container">
+                <h2 id="tools-title" class="section-title" data-aos="fade-up">Ferramentas que Utilizo</h2>
+                <div class="tools-grid" role="list">
+                    <div class="tool-card" role="listitem" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fab fa-wordpress" aria-hidden="true"></i>
+                        <h3>WooCommerce</h3>
+                        <p>Plataforma robusta e flexível para WordPress</p>
+                    </div>
+                    <div class="tool-card" role="listitem" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fab fa-shopify" aria-hidden="true"></i>
+                        <h3>Shopify</h3>
+                        <p>Solução completa para e-commerce</p>
+                    </div>
+                    <div class="tool-card" role="listitem" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fab fa-node-js" aria-hidden="true"></i>
+                        <h3>Node.js</h3>
+                        <p>Desenvolvimento de soluções personalizadas</p>
+                    </div>
+                    <div class="tool-card" role="listitem" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-database" aria-hidden="true"></i>
+                        <h3>MongoDB</h3>
+                        <p>Banco de dados para soluções escaláveis</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Outros Serviços -->
+        <section class="service-details" aria-labelledby="other-services-title">
+            <div class="container">
+                <h2 id="other-services-title" class="section-title" data-aos="fade-up">Conheça Outros Serviços</h2>
+                <div class="tools-grid" role="list">
+                    <a href="desenvolvimento-web.html" class="tool-card service-link" role="listitem" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                        <h3>Desenvolvimento Web</h3>
+                        <p>Sites e aplicações web modernas e responsivas</p>
+                        <span class="link-arrow">Ver mais <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                    </a>
+                    <a href="automacao.html" class="tool-card service-link" role="listitem" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-robot" aria-hidden="true"></i>
+                        <h3>Automação</h3>
+                        <p>Soluções personalizadas para otimizar processos</p>
+                        <span class="link-arrow">Ver mais <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="service-cta" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-content" data-aos="zoom-in">
+                    <h2 id="cta-title" class="section-title">Pronto para começar a vender online?</h2>
+                    <p class="cta-text">Vamos criar sua loja virtual do zero ou migrar sua loja existente!</p>
+                    <a href="#quote-form" class="btn btn-primary btn-large pulse" role="button">Solicitar Orçamento</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Form Section -->
+        <section class="quote-hero">
+            <div class="container">
+                <h1 class="section-title" data-aos="fade-up">Solicite um Orçamento</h1>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Entre em contato e vamos conversar sobre seu projeto!</p>
+                <a href="../../index.html#contato" class="btn btn-primary btn-large" role="button" data-aos="fade-up" data-aos-delay="200">Ir para o Contato</a>
+            </div>
+        </section>
     </main>
 
-    <footer class="wrapperContainer wrapperContainer-dark">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="../../assets/images/logo.png" alt="Carmo.dev Logo">
-                </div>
-                <div class="footer-social">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                </div>
-                <p class="footer-copyright">&copy; 2024 Carmo.dev. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Include Footer -->
+    <div id="footer"></div>
 
-    <!-- JavaScript -->
-    <script src="../../assets/js/main.js"></script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
 </body>
 </html> 

@@ -3,129 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Automação de Processos - Carmo.dev">
-    <title>Automação - Carmo.dev</title>
-    
+    <meta name="description" content="Automação de processos e tarefas - Soluções personalizadas para otimizar sua produtividade e eficiência.">
+    <title>Automação | Carmo.dev</title>
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
-    
+    <link rel="apple-touch-icon" href="../../assets/images/apple-touch-icon.png">
+
     <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/fonts.css">
     <link rel="stylesheet" href="../../assets/css/reset.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
-    
+    <link rel="stylesheet" href="_styles/servicos.css">
+    <link rel="stylesheet" href="_styles/quote-form.css">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="wrapperContainer wrapperContainer-dark wrapperContainer-fixed">
-        <header class="header container">
-            <a href="/" class="logo">
-                <img src="../../assets/images/logo.png" alt="Carmo.dev Logo">
-            </a>
-
-            <nav class="header_nav">
-                <button class="mobile-menu-btn" aria-label="Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul class="nav-list">
-                    <li><a href="/#home">Home</a></li>
-                    <li><a href="/#sobre">Sobre mim</a></li>
-                    <li><a href="/#servicos">Serviços</a></li>
-                    <li><a href="/#portfolio">Portfólio</a></li>
-                    <li><a href="/#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </header>
-    </div>
+    <!-- Include Header -->
+    <div id="header"></div>
 
     <main>
-        <section class="wrapperContainer wrapperContainer-light wrapperContainer-padded">
+        <!-- Hero Section -->
+        <section class="service-hero" aria-label="Introdução do serviço">
             <div class="container">
-                <h1 class="section_title">Automação de Processos</h1>
-                
-                <div class="service-detail">
-                    <div class="service-detail-content">
-                        <h2>Automatize seus processos e aumente a eficiência do seu negócio</h2>
-                        
-                        <div class="service-features">
-                            <div class="feature">
-                                <i class="fas fa-robot"></i>
-                                <h3>Automação de Tarefas</h3>
-                                <p>Automatize tarefas repetitivas e aumente a produtividade.</p>
-                            </div>
-                            
-                            <div class="feature">
-                                <i class="fas fa-sync"></i>
-                                <h3>Integração de Sistemas</h3>
-                                <p>Conecte diferentes sistemas e automatize o fluxo de dados.</p>
-                            </div>
-                            
-                            <div class="feature">
-                                <i class="fas fa-chart-bar"></i>
-                                <h3>Análise de Dados</h3>
-                                <p>Automatize a coleta e análise de dados do seu negócio.</p>
-                            </div>
-                            
-                            <div class="feature">
-                                <i class="fas fa-envelope"></i>
-                                <h3>Automação de E-mails</h3>
-                                <p>Automatize o envio de e-mails e comunicações.</p>
-                            </div>
-
-                            <div class="feature">
-                                <i class="fas fa-headset"></i>
-                                <h3>Suporte Técnico</h3>
-                                <p>Suporte especializado para manutenção dos processos automatizados.</p>
-                            </div>
-
-                            <div class="feature">
-                                <i class="fas fa-graduation-cap"></i>
-                                <h3>Treinamento</h3>
-                                <p>Capacitação para sua equipe utilizar os sistemas automatizados.</p>
-                            </div>
+                <div class="service-hero-content" data-aos="fade-up">
+                    <h1 class="service-title">Automação</h1>
+                    <p class="service-subtitle">Automatize tarefas repetitivas e otimize seus processos com soluções personalizadas. Aumente sua produtividade e reduza erros.</p>
+                    
+                    <div class="service-features" role="list">
+                        <div class="service-feature" role="listitem" data-aos="fade-up" data-aos-delay="100">
+                            <i class="fas fa-robot" aria-hidden="true"></i>
+                            <span>Automação Inteligente</span>
                         </div>
-
-                        <div class="service-benefits">
-                            <h3>Benefícios</h3>
-                            <ul>
-                                <li>Redução de erros operacionais</li>
-                                <li>Aumento da produtividade</li>
-                                <li>Economia de tempo e recursos</li>
-                                <li>Processos mais eficientes</li>
-                                <li>Suporte técnico especializado</li>
-                                <li>Relatórios automatizados</li>
-                            </ul>
+                        <div class="service-feature" role="listitem" data-aos="fade-up" data-aos-delay="200">
+                            <i class="fas fa-clock" aria-hidden="true"></i>
+                            <span>Economia de Tempo</span>
                         </div>
-
-                        <div class="service-cta">
-                            <a href="/#contato" class="btn btn-primary">Solicitar Orçamento</a>
+                        <div class="service-feature" role="listitem" data-aos="fade-up" data-aos-delay="300">
+                            <i class="fas fa-chart-line" aria-hidden="true"></i>
+                            <span>Maior Produtividade</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- O que é Automação -->
+        <section class="service-details" aria-labelledby="automation-definition">
+            <div class="container">
+                <div class="service-grid">
+                    <div class="service-info" data-aos="fade-right">
+                        <h2 id="automation-definition" class="section-title small">O que é Automação?</h2>
+                        <p>
+                            <strong>Automação</strong> é o uso de tecnologia para executar tarefas e processos de forma automática, sem intervenção manual. Isso pode envolver desde scripts simples até sistemas complexos que integram diferentes plataformas.
+                        </p>
+                        <p>
+                            Com automação, é possível <strong>eliminar tarefas repetitivas</strong>, <strong>reduzir erros</strong> e <strong>ganhar tempo</strong> para focar no que realmente importa para o seu negócio.
+                        </p>
+                        <p>
+                            As soluções de automação podem ser aplicadas em <strong>diversos setores</strong>: financeiro, marketing, atendimento, vendas, TI e muito mais.
+                        </p>
+                        <p>
+                            O objetivo é sempre <strong>otimizar processos</strong>, <strong>aumentar a produtividade</strong> e <strong>reduzir custos</strong>.
+                        </p>
+                    </div>
+                    <div class="service-image" data-aos="fade-left">
+                        <img src="../../assets/images/automation-illustration.svg" alt="Ilustração de automação" class="floating" width="500" height="400">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Importância -->
+        <section class="process-section" aria-labelledby="importance-title">
+            <div class="container">
+                <h2 id="importance-title" class="section-title" data-aos="fade-up">Por que Automatizar?</h2>
+                <div class="process-timeline" role="list">
+                    <div class="process-step" role="listitem" data-aos="fade-up" data-aos-delay="100">
+                        <div class="step-number" aria-hidden="true">1</div>
+                        <h3>Eficiência</h3>
+                        <p>Redução de tempo em tarefas repetitivas</p>
+                    </div>
+                    <div class="process-step" role="listitem" data-aos="fade-up" data-aos-delay="200">
+                        <div class="step-number" aria-hidden="true">2</div>
+                        <h3>Precisão</h3>
+                        <p>Eliminação de erros humanos</p>
+                    </div>
+                    <div class="process-step" role="listitem" data-aos="fade-up" data-aos-delay="300">
+                        <div class="step-number" aria-hidden="true">3</div>
+                        <h3>Escalabilidade</h3>
+                        <p>Processos que crescem com seu negócio</p>
+                    </div>
+                    <div class="process-step" role="listitem" data-aos="fade-up" data-aos-delay="400">
+                        <div class="step-number" aria-hidden="true">4</div>
+                        <h3>Economia</h3>
+                        <p>Redução de custos operacionais</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ferramentas -->
+        <section class="service-details" aria-labelledby="tools-title">
+            <div class="container">
+                <h2 id="tools-title" class="section-title" data-aos="fade-up">Ferramentas que Utilizo</h2>
+                <div class="tools-grid" role="list">
+                    <div class="tool-card" role="listitem" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fab fa-python" aria-hidden="true"></i>
+                        <h3>Python</h3>
+                        <p>Automação de tarefas e processos</p>
+                    </div>
+                    <div class="tool-card" role="listitem" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fab fa-node-js" aria-hidden="true"></i>
+                        <h3>Node.js</h3>
+                        <p>Automação web e integrações</p>
+                    </div>
+                    <div class="tool-card" role="listitem" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-database" aria-hidden="true"></i>
+                        <h3>APIs</h3>
+                        <p>Integração entre sistemas</p>
+                    </div>
+                    <div class="tool-card" role="listitem" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-cloud" aria-hidden="true"></i>
+                        <h3>Cloud</h3>
+                        <p>Automação em nuvem</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Outros Serviços -->
+        <section class="service-details" aria-labelledby="other-services-title">
+            <div class="container">
+                <h2 id="other-services-title" class="section-title" data-aos="fade-up">Conheça Outros Serviços</h2>
+                <div class="tools-grid" role="list">
+                    <a href="desenvolvimento-web.html" class="tool-card service-link" role="listitem" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                        <h3>Desenvolvimento Web</h3>
+                        <p>Sites e aplicações web modernas e responsivas</p>
+                        <span class="link-arrow">Ver mais <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                    </a>
+                    <a href="ecommerce.html" class="tool-card service-link" role="listitem" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                        <h3>E-commerce</h3>
+                        <p>Lojas virtuais completas e otimizadas</p>
+                        <span class="link-arrow">Ver mais <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="service-cta" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-content" data-aos="zoom-in">
+                    <h2 id="cta-title" class="section-title">Pronto para automatizar?</h2>
+                    <p class="cta-text">Vamos transformar seus processos em soluções eficientes!</p>
+                    <a href="#quote-form" class="btn btn-primary btn-large pulse" role="button">Solicitar Orçamento</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Form Section -->
+        <section class="quote-hero">
+            <div class="container">
+                <h1 class="section-title" data-aos="fade-up">Solicite um Orçamento</h1>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Entre em contato e vamos conversar sobre seu projeto!</p>
+                <a href="../../index.html#contato" class="btn btn-primary btn-large" role="button" data-aos="fade-up" data-aos-delay="200">Ir para o Contato</a>
+            </div>
+        </section>
     </main>
 
-    <footer class="wrapperContainer wrapperContainer-dark">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="../../assets/images/logo.png" alt="Carmo.dev Logo">
-                </div>
-                <div class="footer-social">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                </div>
-                <p class="footer-copyright">&copy; 2024 Carmo.dev. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Include Footer -->
+    <div id="footer"></div>
 
-    <!-- JavaScript -->
-    <script src="../../assets/js/main.js"></script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
 </body>
 </html> 
