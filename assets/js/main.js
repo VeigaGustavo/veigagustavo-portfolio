@@ -211,7 +211,7 @@ function renderPortfolioCards(repos) {
                     <h3>${repo.name}</h3>
                     <p>${repo.description || 'Sem descrição.'}</p>
                     <div class="portfolio-card-footer">
-                        <span class="btn btn-primary">
+                        <span class="btn btn-primary pulse">
                             Ver no GitHub <i class="fab fa-github"></i>
                         </span>
                     </div>
