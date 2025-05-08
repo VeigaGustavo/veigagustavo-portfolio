@@ -3,179 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Solicite um orçamento para sua loja virtual - Carmo.dev">
-    <title>Solicitar Orçamento - E-commerce | Carmo.dev</title>
-    
+    <meta name="description" content="Solicite um orçamento para seu projeto - Carmo.dev">
+    <title>Solicitar Orçamento | Carmo.dev</title>
+
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
-    
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+
     <!-- CSS -->
-    <link rel="stylesheet" href="../../assets/css/fonts.css">
-    <link rel="stylesheet" href="../../assets/css/reset.css">
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="servicos/_styles/quote-form.css">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
-    <header class="header">
-        <div class="container header-container">
-            <a href="../../index.html" class="logo" aria-label="Carmo.dev - Página inicial">
-                <img src="../../assets/images/logo.png" alt="Carmo.dev Logo" width="150" height="40">
-            </a>
-            <nav class="header_nav" aria-label="Menu principal">
-                <button class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-list">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul class="nav-list" id="nav-list">
-                    <li><a href="../../index.html#home" class="nav-link">Home</a></li>
-                    <li><a href="../../index.html#sobre" class="nav-link">Sobre mim</a></li>
-                    <li><a href="../../index.html#servicos" class="nav-link">Serviços</a></li>
-                    <li><a href="../../index.html#portfolio" class="nav-link">Portfólio</a></li>
-                    <li><a href="../../index.html#contato" class="nav-link">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- Include Header -->
+    <div id="header"></div>
 
     <main>
-        <section class="quote-header">
-            <div class="quote-header-content">
-                <h1 class="quote-header-title">E-commerce</h1>
-                <p class="quote-header-subtitle">Desenvolvimento de lojas virtuais completas com gestão de produtos, pagamentos e entregas. Soluções personalizadas para maximizar suas vendas online.</p>
-                <div class="quote-header-features">
-                    <div class="quote-header-feature">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span>Vendas Online</span>
+        <section class="quote-hero">
+            <div class="container">
+                <h1 class="section-title">Solicitar Orçamento</h1>
+                <p class="section-subtitle">Conte-nos sobre seu projeto e entraremos em contato em até 24 horas</p>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <div class="container">
+                <div class="quote-grid">
+                    <div class="quote-info">
+                        <h2 class="section-title small">Por que escolher a Carmo.dev?</h2>
+                        <ul class="benefits-list">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h3>Experiência Comprovada</h3>
+                                    <p>Anos de experiência em desenvolvimento de soluções digitais</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h3>Atendimento Personalizado</h3>
+                                    <p>Cada projeto recebe atenção individual e dedicada</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h3>Tecnologias Modernas</h3>
+                                    <p>Utilizamos as mais recentes tecnologias do mercado</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h3>Suporte Contínuo</h3>
+                                    <p>Acompanhamento e suporte durante todo o projeto</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="quote-header-feature">
-                        <i class="fas fa-credit-card"></i>
-                        <span>Pagamentos Seguros</span>
-                    </div>
-                    <div class="quote-header-feature">
-                        <i class="fas fa-truck"></i>
-                        <span>Gestão de Entregas</span>
+
+                    <div class="quote-form-container">
+                        <form class="quote-form" id="quoteForm">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Nome completo</label>
+                                <input type="text" id="name" name="name" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">E-mail</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Telefone</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service" class="form-label">Serviço de interesse</label>
+                                <select id="service" name="service" class="form-select" required>
+                                    <option value="">Selecione um serviço</option>
+                                    <option value="web">Desenvolvimento Web</option>
+                                    <option value="ecommerce">E-commerce</option>
+                                    <option value="automation">Automação</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="budget" class="form-label">Orçamento estimado</label>
+                                <select id="budget" name="budget" class="form-select" required>
+                                    <option value="">Selecione uma faixa</option>
+                                    <option value="small">Até R$ 5.000</option>
+                                    <option value="medium">R$ 5.000 - R$ 15.000</option>
+                                    <option value="large">R$ 15.000 - R$ 30.000</option>
+                                    <option value="enterprise">Acima de R$ 30.000</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="deadline" class="form-label">Prazo desejado</label>
+                                <select id="deadline" name="deadline" class="form-select" required>
+                                    <option value="">Selecione uma opção</option>
+                                    <option value="urgent">Urgente (até 1 semana)</option>
+                                    <option value="normal">Normal (2-3 semanas)</option>
+                                    <option value="flexible">Flexível (1 mês ou mais)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label">Detalhes do projeto</label>
+                                <textarea id="message" name="message" class="form-textarea" required 
+                                        placeholder="Descreva seu projeto, objetivos e requisitos específicos..."></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-button">Enviar Solicitação</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
-
-        <div class="container">
-            <div class="quote-content">
-                <div class="quote-info">
-                    <h3>O que está incluído</h3>
-                    <ul class="features-list">
-                        <li><i class="fas fa-check"></i> Design responsivo e moderno</li>
-                        <li><i class="fas fa-check"></i> Catálogo de produtos ilimitado</li>
-                        <li><i class="fas fa-check"></i> Integração com gateways de pagamento</li>
-                        <li><i class="fas fa-check"></i> Sistema de gestão de estoque</li>
-                        <li><i class="fas fa-check"></i> Painel administrativo completo</li>
-                        <li><i class="fas fa-check"></i> Integração com transportadoras</li>
-                        <li><i class="fas fa-check"></i> SEO otimizado</li>
-                        <li><i class="fas fa-check"></i> Suporte técnico</li>
-                        <li><i class="fas fa-check"></i> Treinamento da equipe</li>
-                    </ul>
-                </div>
-
-                <form class="quote-form" id="quoteForm">
-                    <div class="form-group">
-                        <label for="name">Nome completo</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Telefone</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="products">Quantidade aproximada de produtos</label>
-                        <select id="products" name="products" required>
-                            <option value="">Selecione uma opção</option>
-                            <option value="0-100">0-100 produtos</option>
-                            <option value="101-500">101-500 produtos</option>
-                            <option value="501-1000">501-1000 produtos</option>
-                            <option value="1000+">Mais de 1000 produtos</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="deadline">Prazo desejado</label>
-                        <select id="deadline" name="deadline" required>
-                            <option value="">Selecione uma opção</option>
-                            <option value="urgente">Urgente (até 1 semana)</option>
-                            <option value="normal">Normal (2-3 semanas)</option>
-                            <option value="flexivel">Flexível (1 mês ou mais)</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Métodos de pagamento desejados</label>
-                        <div class="checkbox-group">
-                            <label>
-                                <input type="checkbox" name="payment" value="credit">
-                                Cartão de Crédito
-                            </label>
-                            <label>
-                                <input type="checkbox" name="payment" value="pix">
-                                PIX
-                            </label>
-                            <label>
-                                <input type="checkbox" name="payment" value="boleto">
-                                Boleto
-                            </label>
-                            <label>
-                                <input type="checkbox" name="payment" value="transfer">
-                                Transferência
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Detalhes do projeto</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Solicitar Orçamento</button>
-                </form>
-            </div>
-        </div>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="../../assets/images/logo.png" alt="Carmo.dev Logo" class="footer-logo" width="120" height="32">
-                    <p class="footer-description">Transformando ideias em soluções digitais</p>
-                </div>
-                <div class="footer-social">
-                    <a href="#" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="GitHub" target="_blank" rel="noopener">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="copyright">&copy; 2024 Carmo.dev. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Include Footer -->
+    <div id="footer"></div>
 
     <!-- JavaScript -->
-    <script src="../../assets/js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="servicos/_scripts/quote-form.js"></script>
+    <script>
+        // Carregar componentes
+        fetch('servicos/_components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        fetch('servicos/_components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+
+        // Preencher serviço automaticamente se vier da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const service = urlParams.get('service');
+        if (service) {
+            document.getElementById('service').value = service;
+        }
+    </script>
 </body>
 </html> 

@@ -1,0 +1,482 @@
+/* Estilo para subtítulos sublinhados */
+.subtitle-underline {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.subtitle-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        var(--primary-color) 0%,
+        var(--primary-color) 50%,
+        transparent 50%,
+        transparent 100%
+    );
+    background-size: 200% 100%;
+    transition: background-position 0.3s ease;
+}
+
+.subtitle-underline:hover::after {
+    background-position: -100% 0;
+}
+
+/* Variações de tamanho */
+.subtitle-underline.small {
+    font-size: 1.125rem;
+    padding-bottom: 0.375rem;
+}
+
+.subtitle-underline.medium {
+    font-size: 1.25rem;
+    padding-bottom: 0.5rem;
+}
+
+.subtitle-underline.large {
+    font-size: 1.5rem;
+    padding-bottom: 0.625rem;
+}
+
+/* Variações de cor */
+.subtitle-underline.primary::after {
+    background: linear-gradient(
+        to right,
+        var(--primary-color) 0%,
+        var(--primary-color) 50%,
+        transparent 50%,
+        transparent 100%
+    );
+}
+
+.subtitle-underline.secondary::after {
+    background: linear-gradient(
+        to right,
+        var(--secondary-color) 0%,
+        var(--secondary-color) 50%,
+        transparent 50%,
+        transparent 100%
+    );
+}
+
+/* Variações de estilo */
+.subtitle-underline.dotted::after {
+    background: linear-gradient(
+        to right,
+        var(--primary-color) 0%,
+        var(--primary-color) 50%,
+        transparent 50%,
+        transparent 100%
+    );
+    height: 1px;
+    background-size: 4px 1px;
+    background-repeat: repeat-x;
+}
+
+.subtitle-underline.dashed::after {
+    background: linear-gradient(
+        to right,
+        var(--primary-color) 0%,
+        var(--primary-color) 50%,
+        transparent 50%,
+        transparent 100%
+    );
+    height: 1px;
+    background-size: 8px 1px;
+    background-repeat: repeat-x;
+}
+
+/* Tamanhos base para títulos de seção */
+.section-title {
+    font-size: 2.25rem; /* Reduzido de 2.5rem para melhor proporção */
+    font-weight: 700;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 1.75rem; /* Ajustado para manter proporção com o novo tamanho */
+    position: relative;
+    padding-bottom: 1.25rem; /* Reduzido para melhor equilíbrio */
+    letter-spacing: -0.02em;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px; /* Reduzido para melhor proporção com o texto */
+    height: 3px; /* Reduzido para uma linha mais elegante */
+    background: linear-gradient(
+        90deg,
+        var(--primary-color) 0%,
+        var(--secondary-color) 50%,
+        var(--primary-color) 100%
+    );
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Variações de tamanho ajustadas */
+.section-title.small {
+    font-size: 1.75rem; /* Reduzido de 2rem */
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.section-title.small::after {
+    width: 50px;
+    height: 2px;
+}
+
+.section-title.medium {
+    font-size: 2rem; /* Novo tamanho intermediário */
+    margin-bottom: 1.6rem;
+    padding-bottom: 1.1rem;
+}
+
+.section-title.medium::after {
+    width: 60px;
+    height: 2.5px;
+}
+
+.section-title.large {
+    font-size: 2.5rem; /* Reduzido de 3rem */
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+}
+
+.section-title.large::after {
+    width: 80px;
+    height: 3.5px;
+}
+
+.section-title.xlarge {
+    font-size: 3rem; /* Novo tamanho extra grande */
+    margin-bottom: 2.25rem;
+    padding-bottom: 1.75rem;
+}
+
+.section-title.xlarge::after {
+    width: 100px;
+    height: 4px;
+}
+
+/* Efeito hover ajustado */
+.section-title:hover::after {
+    width: calc(100% + 20px); /* Agora a linha se expande proporcionalmente ao tamanho do título */
+}
+
+/* Responsividade ajustada */
+@media (max-width: 1024px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-title.small {
+        font-size: 1.5rem;
+    }
+    
+    .section-title.medium {
+        font-size: 1.75rem;
+    }
+    
+    .section-title.large {
+        font-size: 2.25rem;
+    }
+    
+    .section-title.xlarge {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+    }
+    
+    .section-title.small {
+        font-size: 1.25rem;
+    }
+    
+    .section-title.medium {
+        font-size: 1.5rem;
+    }
+    
+    .section-title.large {
+        font-size: 2rem;
+    }
+    
+    .section-title.xlarge {
+        font-size: 2.25rem;
+    }
+    
+    .section-title::after {
+        width: 50px;
+        height: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.25rem;
+        padding-bottom: 0.875rem;
+    }
+    
+    .section-title.small {
+        font-size: 1.125rem;
+    }
+    
+    .section-title.medium {
+        font-size: 1.25rem;
+    }
+    
+    .section-title.large {
+        font-size: 1.75rem;
+    }
+    
+    .section-title.xlarge {
+        font-size: 2rem;
+    }
+    
+    .section-title::after {
+        width: 40px;
+        height: 2px;
+    }
+}
+
+/* Service Hero */
+.service-hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 6rem 0 4rem;
+    margin-bottom: 4rem;
+}
+
+.service-hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.service-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.service-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.service-features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.service-feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.service-feature i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Service Details */
+.service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin: 4rem 0;
+}
+
+.service-info {
+    padding-right: 2rem;
+}
+
+.features-list {
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.features-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.features-list i {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+}
+
+/* FAQ Section */
+.service-faq {
+    background-color: var(--light-bg);
+    padding: 4rem 0;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.faq-item {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.faq-answer {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .service-hero {
+        padding: 4rem 0 3rem;
+    }
+
+    .service-title {
+        font-size: 2.5rem;
+    }
+
+    .service-features {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .service-info {
+        padding-right: 0;
+    }
+}
+
+.quote-container {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quote-form {
+    margin-top: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.1);
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.form-textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Validação de Formulário */
+.form-input.error,
+.form-select.error,
+.form-textarea.error {
+    border-color: var(--error-color);
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Botão de Envio */
+.submit-button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background: var(--primary-dark);
+}
+
+.submit-button:disabled {
+    background: var(--gray-400);
+    cursor: not-allowed;
+} 

@@ -7,20 +7,12 @@ mobileMenuBtn.addEventListener('click', () => {
     mobileMenuBtn.classList.toggle('active');
 });
 
-// Close menu when clicking outside
+// Close menu when clicking outside or on a link
 document.addEventListener('click', (e) => {
-    if (!e.target.closest('.header_nav')) {
+    if (!e.target.closest('.header_nav') || e.target.closest('.nav-list a')) {
         navList.classList.remove('active');
         mobileMenuBtn.classList.remove('active');
     }
-});
-
-// Close menu when clicking on a link
-document.querySelectorAll('.nav-list a').forEach(link => {
-    link.addEventListener('click', () => {
-        navList.classList.remove('active');
-        mobileMenuBtn.classList.remove('active');
-    });
 });
 
 // Smooth scroll for anchor links
@@ -59,27 +51,76 @@ document.querySelectorAll('.service-card, .portfolio-item, .feature').forEach(el
 });
 
 // Form validation
-const form = document.querySelector('.contact-form');
-if (form) {
-    form.addEventListener('submit', (e) => {
+const validateForm = (form) => {
+    const requiredFields = form.querySelectorAll('[required]');
+    let isValid = true;
+
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            isValid = false;
+            field.classList.add('error');
+        } else {
+            field.classList.remove('error');
+        }
+    });
+
+    return isValid;
+};
+
+// Add error styles
+const style = document.createElement('style');
+style.textContent = `
+    .error {
+        border-color: #ff4444 !important;
+    }
+    .error:focus {
+        box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.1) !important;
+    }
+`;
+document.head.appendChild(style);
+
+// Contact Form Handling
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        let isValid = true;
-        const requiredFields = form.querySelectorAll('[required]');
-        
-        requiredFields.forEach(field => {
-            if (!field.value.trim()) {
-                isValid = false;
-                field.classList.add('error');
-            } else {
-                field.classList.remove('error');
-            }
-        });
-        
-        if (isValid) {
+        if (validateForm(contactForm)) {
             // Here you would typically send the form data to your server
             alert('Mensagem enviada com sucesso!');
-            form.reset();
+            contactForm.reset();
+        }
+    });
+}
+
+// Quote Form Handling
+const quoteForm = document.getElementById('quoteForm');
+if (quoteForm) {
+    quoteForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        if (validateForm(quoteForm)) {
+            const formData = new FormData(quoteForm);
+            const data = Object.fromEntries(formData.entries());
+
+            // Get selected features
+            const features = formData.getAll('features');
+            data.features = features;
+
+            // Get selected systems (for automation form)
+            const systems = formData.getAll('systems');
+            if (systems.length > 0) {
+                data.systems = systems;
+            }
+
+            try {
+                // Here you would typically send the data to your backend
+                alert('Orçamento solicitado com sucesso! Entraremos em contato em breve.');
+                quoteForm.reset();
+            } catch (error) {
+                console.error('Error submitting quote:', error);
+                alert('Ocorreu um erro ao enviar o orçamento. Por favor, tente novamente.');
+            }
         }
     });
 }
@@ -113,63 +154,50 @@ document.querySelectorAll('.btn, .service-card, .portfolio-item').forEach(elemen
     });
 });
 
-// Quote Form Handling
-const quoteForm = document.getElementById('quoteForm');
-if (quoteForm) {
-    quoteForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
+// Portfolio GitHub Integration
+const projetosDestacados = [
+    "Dicasa",
+    "ListaTarefas",
+    "tabuada",
+    "linux-projeto2-iac",
+    "universidade-atividade",
+    "ProgCientifica"
+];
 
-        // Get form data
-        const formData = new FormData(quoteForm);
-        const data = Object.fromEntries(formData.entries());
-
-        // Get selected features
-        const features = formData.getAll('features');
-        data.features = features;
-
-        // Get selected systems (for automation form)
-        const systems = formData.getAll('systems');
-        if (systems.length > 0) {
-            data.systems = systems;
-        }
-
-        try {
-            // Here you would typically send the data to your backend
-            // For now, we'll just show a success message
-            alert('Orçamento solicitado com sucesso! Entraremos em contato em breve.');
-            quoteForm.reset();
-        } catch (error) {
-            console.error('Error submitting quote:', error);
-            alert('Ocorreu um erro ao enviar o orçamento. Por favor, tente novamente.');
-        }
+function renderPortfolioCards(repos) {
+    const container = document.getElementById('portfolio-cards');
+    if (!container) return;
+    container.innerHTML = '';
+    // Filtrar apenas os repositórios da lista
+    const destacados = projetosDestacados
+        .map(nome => repos.find(repo => repo.name === nome))
+        .filter(Boolean);
+    destacados.forEach(repo => {
+        const card = document.createElement('div');
+        card.className = 'portfolio-card';
+        card.innerHTML = `
+            <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="portfolio-card-link">
+                <div class="portfolio-card-content">
+                    <h3>${repo.name}</h3>
+                    <p>${repo.description || 'Sem descrição.'}</p>
+                    <div class="portfolio-card-footer">
+                        <span class="btn btn-primary">
+                            Ver no GitHub <i class="fab fa-github"></i>
+                        </span>
+                    </div>
+                </div>
+            </a>
+        `;
+        container.appendChild(card);
     });
 }
 
-// Form validation
-const validateForm = (form) => {
-    const requiredFields = form.querySelectorAll('[required]');
-    let isValid = true;
-
-    requiredFields.forEach(field => {
-        if (!field.value.trim()) {
-            isValid = false;
-            field.classList.add('error');
-        } else {
-            field.classList.remove('error');
-        }
+fetch('https://api.github.com/users/VeigaGustavo/repos')
+    .then(res => res.json())
+    .then(repos => {
+        renderPortfolioCards(repos);
+    })
+    .catch(error => {
+        console.error('Error loading portfolio:', error);
     });
 
-    return isValid;
-};
-
-// Add error styles
-const style = document.createElement('style');
-style.textContent = `
-    .error {
-        border-color: #ff4444 !important;
-    }
-    .error:focus {
-        box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.1) !important;
-    }
-`;
-document.head.appendChild(style); 
