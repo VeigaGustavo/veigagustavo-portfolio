@@ -79,16 +79,46 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// Initialize EmailJS
+emailjs.init("SU2IYyfy-QkYjeCmC");
+
 // Contact Form Handling
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
         if (validateForm(contactForm)) {
-            // Here you would typically send the form data to your server
-            alert('Mensagem enviada com sucesso!');
-            contactForm.reset();
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoader = submitBtn.querySelector('.btn-loader');
+            
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoader.style.display = 'inline-block';
+            submitBtn.disabled = true;
+
+            try {
+                const formData = {
+                    name: contactForm.querySelector('#name').value,
+                    email: contactForm.querySelector('#email').value,
+                    message: contactForm.querySelector('#message').value
+                };
+
+                await emailjs.send('service_pq7j65b', 'template_1cuknmt', formData);
+                
+                // Show success message
+                alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
+                contactForm.reset();
+            } catch (error) {
+                console.error('Error sending email:', error);
+                alert('Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.');
+            } finally {
+                // Reset button state
+                btnText.style.display = 'inline-block';
+                btnLoader.style.display = 'none';
+                submitBtn.disabled = false;
+            }
         }
     });
 }

@@ -190,7 +190,12 @@
                             <label for="message" class="form-label">Mensagem</label>
                             <textarea id="message" name="message" class="form-textarea" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                        <button type="submit" class="btn btn-primary">
+                            <span class="btn-text">Enviar Mensagem</span>
+                            <span class="btn-loader" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </span>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -234,6 +239,7 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="assets/js/main.js" defer></script>
 </body>
 </html>
