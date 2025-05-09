@@ -1,4 +1,4 @@
-# CarmoDev - Desenvolvimento Web e Automação
+Desenvolvimento Web e Automação
 
 Site institucional da CarmoDev, especializada em desenvolvimento web, automação e soluções digitais.
 
