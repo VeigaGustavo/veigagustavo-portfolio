@@ -60,10 +60,6 @@ git clone https://github.com/seu-usuario/carmodev.git
 
 2. Abra o arquivo `index.html` em seu navegador
 
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
 ## 👨‍💻 Autor
 
 Gustavo Veiga - [GitHub](https://github.com/VeigaGustavo) 
