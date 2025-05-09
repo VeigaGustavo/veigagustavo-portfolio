@@ -20,4 +20,35 @@
 
 /* Utilities */
 @import 'utilities/spacing.css';
-@import 'utilities/typography.css'; 
+@import 'utilities/typography.css';
+
+/* Form validation styles */
+.error {
+    border-color: #ff4444 !important;
+}
+
+.error:focus {
+    box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.1) !important;
+}
+
+/* Lazy loading styles */
+.loading {
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.loaded {
+    opacity: 1;
+}
+
+img[data-src],
+iframe[data-src] {
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Touch feedback styles */
+.touch-active {
+    opacity: 0.8;
+    transform: scale(0.98);
+    transition: all 0.2s ease-in-out;
+} 

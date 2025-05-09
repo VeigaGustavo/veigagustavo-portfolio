@@ -2,53 +2,76 @@
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navList = document.querySelector('.nav-list');
 
-mobileMenuBtn.addEventListener('click', () => {
-    navList.classList.toggle('active');
-    mobileMenuBtn.classList.toggle('active');
-});
-
-// Close menu when clicking outside or on a link
+// Event delegation for mobile menu
 document.addEventListener('click', (e) => {
-    if (!e.target.closest('.header_nav') || e.target.closest('.nav-list a')) {
+    if (e.target.closest('.mobile-menu-btn')) {
+        navList.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+    } else if (!e.target.closest('.header_nav') || e.target.closest('.nav-list a')) {
         navList.classList.remove('active');
         mobileMenuBtn.classList.remove('active');
     }
 });
 
 // Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+document.addEventListener('click', (e) => {
+    if (e.target.matches('a[href^="#"]')) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(e.target.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-    });
+    }
 });
 
-// Intersection Observer for animations
+// Unified Intersection Observer
 const observerOptions = {
     root: null,
-    rootMargin: '0px',
+    rootMargin: '50px',
     threshold: 0.1
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-            observer.unobserve(entry.target);
+            const element = entry.target;
+            
+            // Handle animations
+            if (element.matches('.service-card, .portfolio-item, .feature, .process-step, .tool-card, .hero-content, .section-title')) {
+                element.classList.add('animate');
+            }
+            
+            // Handle lazy loading
+            if (element.matches('img[data-src], iframe[data-src]')) {
+                element.classList.add('loading');
+                
+                if (element.tagName === 'IMG') {
+                    if (!element.src) {
+                        element.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"%3E%3Crect width="300" height="200" fill="%23f0f0f0"/%3E%3C/svg%3E';
+                    }
+                    
+                    const img = new Image();
+                    img.onload = () => {
+                        element.src = element.dataset.src;
+                        element.classList.remove('loading');
+                        element.classList.add('loaded');
+                    };
+                    img.src = element.dataset.src;
+                } else if (element.tagName === 'IFRAME') {
+                    element.src = element.dataset.src;
+                    element.classList.remove('loading');
+                    element.classList.add('loaded');
+                }
+            }
+            
+            observer.unobserve(element);
         }
     });
 }, observerOptions);
 
-// Observe elements for animation
-document.querySelectorAll('.service-card, .portfolio-item, .feature').forEach(el => {
-    observer.observe(el);
-});
+// Observe all elements
+document.querySelectorAll('.service-card, .portfolio-item, .feature, .process-step, .tool-card, .hero-content, .section-title, img[data-src], iframe[data-src]')
+    .forEach(el => observer.observe(el));
 
 // Form validation
 const validateForm = (form) => {
@@ -82,106 +105,78 @@ document.head.appendChild(style);
 // Initialize EmailJS
 emailjs.init("SU2IYyfy-QkYjeCmC");
 
-// Contact Form Handling
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
+// Form handling with event delegation
+document.addEventListener('submit', async (e) => {
+    const form = e.target;
+    
+    if (form.matches('.contact-form')) {
         e.preventDefault();
         
-        if (validateForm(contactForm)) {
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
+        if (validateForm(form)) {
+            const submitBtn = form.querySelector('button[type="submit"]');
             const btnText = submitBtn.querySelector('.btn-text');
             const btnLoader = submitBtn.querySelector('.btn-loader');
             
-            // Show loading state
             btnText.style.display = 'none';
             btnLoader.style.display = 'inline-block';
             submitBtn.disabled = true;
 
             try {
                 const formData = {
-                    name: contactForm.querySelector('#name').value,
-                    email: contactForm.querySelector('#email').value,
-                    message: contactForm.querySelector('#message').value
+                    name: form.querySelector('#name').value,
+                    email: form.querySelector('#email').value,
+                    message: form.querySelector('#message').value
                 };
 
                 await emailjs.send('service_pq7j65b', 'template_1cuknmt', formData);
-                
-                // Show success message
                 alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
-                contactForm.reset();
+                form.reset();
             } catch (error) {
                 console.error('Error sending email:', error);
                 alert('Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.');
             } finally {
-                // Reset button state
                 btnText.style.display = 'inline-block';
                 btnLoader.style.display = 'none';
                 submitBtn.disabled = false;
             }
         }
-    });
-}
-
-// Quote Form Handling
-const quoteForm = document.getElementById('quoteForm');
-if (quoteForm) {
-    quoteForm.addEventListener('submit', async (e) => {
+    } else if (form.matches('#quoteForm')) {
         e.preventDefault();
 
-        if (validateForm(quoteForm)) {
-            const formData = new FormData(quoteForm);
+        if (validateForm(form)) {
+            const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
 
-            // Get selected features
-            const features = formData.getAll('features');
-            data.features = features;
-
-            // Get selected systems (for automation form)
+            data.features = formData.getAll('features');
             const systems = formData.getAll('systems');
             if (systems.length > 0) {
                 data.systems = systems;
             }
 
             try {
-                // Here you would typically send the data to your backend
                 alert('Orçamento solicitado com sucesso! Entraremos em contato em breve.');
-                quoteForm.reset();
+                form.reset();
             } catch (error) {
                 console.error('Error submitting quote:', error);
                 alert('Ocorreu um erro ao enviar o orçamento. Por favor, tente novamente.');
             }
         }
-    });
-}
-
-// Lazy loading for images
-document.addEventListener('DOMContentLoaded', () => {
-    const lazyImages = document.querySelectorAll('img[data-src]');
-    
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                imageObserver.unobserve(img);
-            }
-        });
-    });
-    
-    lazyImages.forEach(img => imageObserver.observe(img));
+    }
 });
 
-// Add touch feedback for mobile devices
-document.querySelectorAll('.btn, .service-card, .portfolio-item').forEach(element => {
-    element.addEventListener('touchstart', function() {
-        this.classList.add('touch-active');
-    });
-    
-    element.addEventListener('touchend', function() {
-        this.classList.remove('touch-active');
-    });
+// Touch feedback with event delegation
+document.addEventListener('touchstart', (e) => {
+    const element = e.target.closest('.btn, .service-card, .portfolio-item');
+    if (element) {
+        element.classList.add('touch-active');
+    }
+});
+
+document.addEventListener('touchend', (e) => {
+    const element = e.target.closest('.btn, .service-card, .portfolio-item');
+    if (element) {
+        element.classList.remove('touch-active');
+    }
 });
 
 // Portfolio GitHub Integration
