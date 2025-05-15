@@ -11,6 +11,8 @@
     --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --hover-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --white: #fff;
+    --primary-dark: #4b1fa6;
 }
 
 /* Base Styles */
