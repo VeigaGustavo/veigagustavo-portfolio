@@ -1,0 +1,219 @@
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    max-width: unset;
+    margin: 0;
+    align-items: stretch;
+    background: transparent;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    padding: 1.1rem 1.2rem;
+    background: transparent;
+    border-radius: 32px;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 1.13rem;
+    font-weight: 600;
+    justify-content: flex-start;
+    width: 100%;
+    transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: none;
+}
+
+.contact-item:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: #e0e7ff;
+    color: #fff;
+    transform: scale(1.03);
+}
+
+.contact-item i {
+    font-size: 2rem;
+    color: #fff;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    min-width: unset !important;
+    min-height: unset !important;
+}
+
+.contact-item span,
+.contact-item .contact-address {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.13rem;
+    text-decoration: none;
+    transition: color 0.2s;
+    word-break: break-all;
+}
+
+.contact-link {
+    color: #1f2937;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #6d28d9;
+}
+
+.contact-address {
+    font-style: normal;
+    color: #1f2937;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .contact-item {
+        padding: 0.75rem;
+    }
+    
+    .contact-item i {
+        font-size: 1.25rem;
+    }
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #6d28d9 0%, #3b82f6 100%);
+    border-radius: 32px;
+    box-shadow: 0 8px 32px rgba(109, 40, 217, 0.12);
+    padding: 3rem 2rem 2.5rem 2rem;
+    margin: 3rem auto 0 auto;
+}
+
+.contact-linktree {
+    background: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.contact-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.2rem;
+    border: 4px solid #fff;
+    box-shadow: 0 2px 12px rgba(109, 40, 217, 0.15);
+}
+
+.contact-name {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    text-align: center;
+}
+
+.contact-desc {
+    color: #e0e7ff;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.location-item {
+    background: none;
+    box-shadow: none;
+    cursor: default;
+    color: #e0e7ff;
+    margin-top: 0.5rem;
+    justify-content: center;
+    border: none;
+}
+.location-item i {
+    background: none;
+    color: #e0e7ff;
+    box-shadow: none;
+}
+.location-item span {
+    color: #e0e7ff;
+    font-weight: 400;
+    font-size: 1.05rem;
+}
+
+@media (max-width: 600px) {
+    .contact-linktree {
+        padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+        max-width: 98vw;
+    }
+    .contact-item {
+        padding: 0.8rem 0.5rem;
+        font-size: 1rem;
+    }
+    .contact-item i {
+        font-size: 1.3rem;
+        min-width: 2rem;
+        min-height: 2rem;
+    }
+    .contact-avatar {
+        width: 72px;
+        height: 72px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .contact-linktree {
+        max-width: 1100px;
+        min-width: 700px;
+        width: 80vw;
+        padding: 4rem 4rem 3rem 4rem;
+    }
+    .contact-info {
+        gap: 1.1rem;
+    }
+    .contact-item {
+        font-size: 1.25rem;
+        padding: 1.5rem 3rem;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contact-avatar {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+.contact-location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 2.2rem;
+    color: #6d28d9;
+    font-size: 1.13rem;
+    font-weight: 500;
+    background: none;
+    border: none;
+    box-shadow: none;
+    cursor: default;
+    transition: none;
+}
+.contact-location i {
+    color: #c7bfff;
+    font-size: 1.4rem;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+}
+.contact-location span {
+    color: #6d28d9;
+    font-weight: 500;
+    font-size: 1.13rem;
+} 
