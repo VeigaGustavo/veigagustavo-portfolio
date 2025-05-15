@@ -1,40 +1,41 @@
-# CarmoDev - Desenvolvimento Web e Automação
+# CarmoDev - Soluções Digitais
 
-Site institucional da CarmoDev, especializada em desenvolvimento web, automação e soluções digitais.
+Site institucional da CarmoDev, especializada em desenvolvimento web e automação. Oferecemos soluções digitais personalizadas para impulsionar seu negócio.
 
 ## 🚀 Tecnologias
 
 - HTML5
 - CSS3 (com arquitetura modular)
 - JavaScript (ES6+)
-- EmailJS para formulários
+- WhatsApp API para contato
 - GitHub API para portfólio
 
 ## ✨ Funcionalidades
 
-- Design responsivo
-- Animações suaves com Intersection Observer
-- Lazy loading de imagens e iframes
-- Formulários de contato e orçamento
-- Integração com GitHub para portfólio
-- Feedback tátil para dispositivos móveis
+- Design responsivo e moderno
+- Animações suaves
+- Lazy loading de imagens
+- Formulário de contato via WhatsApp
+- Portfólio dinâmico com GitHub
+- Feedback tátil para mobile
 
-## 🛠️ Estrutura do Projeto
+## 🛠️ Estrutura
 
 ```
 ├── assets/
 │   ├── css/
-│   │   ├── components/
-│   │   ├── layout/
-│   │   ├── sections/
-│   │   └── utilities/
 │   ├── js/
 │   └── images/
 ├── pages/
-│   ├── servicos/
-│   └── sobre/
 └── index.html
 ```
+
+## 📱 Responsividade
+
+- Design mobile-first
+- Menu adaptativo
+- Touch feedback
+- Performance otimizada
 
 ## 🎯 Performance
 
@@ -43,13 +44,6 @@ Site institucional da CarmoDev, especializada em desenvolvimento web, automaçã
 - Event delegation
 - CSS modular
 - JavaScript otimizado
-
-## 📱 Responsividade
-
-- Design mobile-first
-- Breakpoints otimizados
-- Touch feedback
-- Menu mobile adaptativo
 
 ## 🔧 Instalação
 

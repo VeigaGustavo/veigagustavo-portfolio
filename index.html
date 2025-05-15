@@ -31,6 +31,9 @@
 
     <!-- Portfolio CSS -->
     <link rel="stylesheet" href="assets/css/sections/portfolio.css">
+    
+    <!-- Contact CSS -->
+    <link rel="stylesheet" href="assets/css/sections/contact.css">
 </head>
 
 <body>
@@ -155,48 +158,36 @@
         <!-- Contact Section -->
         <section id="contato" class="contact" aria-labelledby="contact-title">
             <div class="container">
-                <h2 id="contact-title" class="section-title">Contato</h2>
-                <div class="contact-content">
+                <div class="contact-card">
+                    <img src="assets/images/perfil.png" alt="Foto de Gustavo Antunes" class="contact-avatar">
+                    <h3 class="contact-name">Gustavo Antunes</h3>
+                    <p class="contact-desc">Desenvolvimento Full Stack | E-commerce</p>
                     <div class="contact-info">
-                        <div class="contact-item">
+                        <a class="contact-item" href="mailto:gustavoavdcarmo@gmail.com">
                             <i class="fas fa-envelope" aria-hidden="true"></i>
-                            <a href="mailto:gustavoavdcarmo@gmail.com" class="contact-link">gustavoavdcarmo@gmail.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone" aria-hidden="true"></i>
-                            <a href="tel:+5563992481756" class="contact-link">+55 (63) 99248-1756</a>
-                        </div>
-
-                        <div class="contact-item">
-                            <i class="fas fa-link" aria-hidden="true"></i>
-                            <a href="https://linktr.ee/carmogustavo" class="contact-link" target="_blank" rel="noopener">@carmogustavo</a>
-                        </div>
-
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                            <address class="contact-address">Tocantins, Brasil</address>
-                        </div>
+                            <span>gustavoavdcarmo@gmail.com</span>
+                        </a>
+                        <a class="contact-item" href="https://github.com/VeigaGustavo" target="_blank" rel="noopener">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <span>@VeigaGustavo</span>
+                        </a>
+                        <a class="contact-item" href="https://g.dev/veigagustavo" target="_blank" rel="noopener">
+                            <i class="fab fa-google" aria-hidden="true"></i>
+                            <span>@veigagustavo</span>
+                        </a>
+                        <a class="contact-item" href="https://www.linkedin.com/in/carmogustavo/" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            <span>@carmogustavo</span>
+                        </a>
+                        <a class="contact-item" href="https://wa.me/+5563992481756" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            <span>+55 (63) 99248-1756</span>
+                        </a>
                     </div>
-                    <form class="contact-form" id="contactForm" novalidate>
-                        <div class="form-group">
-                            <label for="name" class="form-label">Nome</label>
-                            <input type="text" id="name" name="name" class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="form-label">E-mail</label>
-                            <input type="email" id="email" name="email" class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="form-label">Mensagem</label>
-                            <textarea id="message" name="message" class="form-textarea" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                            <span class="btn-text">Enviar Mensagem</span>
-                            <span class="btn-loader" style="display: none;">
-                                <i class="fas fa-spinner fa-spin"></i>
-                            </span>
-                        </button>
-                    </form>
+                </div>
+                <div class="contact-location">
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                    <span>Tocantins, Brasil</span>
                 </div>
             </div>
         </section>
