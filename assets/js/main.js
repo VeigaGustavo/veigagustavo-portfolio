@@ -197,7 +197,7 @@ document.addEventListener('touchend', (e) => {
 const projetosDestacados = [
     "Dicasa",
     "ListaTarefas",
-    "tabuada",
+    "TabuadaJS",
     "linux-projeto2-iac",
     "universidade-atividade",
     "ProgCientifica"
