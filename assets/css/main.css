@@ -1,21 +1,17 @@
 /* Base */
 @import 'reset.css';
 @import 'fonts.css';
+@import 'style.css';
 
 /* Layout */
 @import 'layout/grid.css';
-@import 'layout/container.css';
 
 /* Components */
-@import 'components/button.css';
-@import 'components/card.css';
-@import 'components/form.css';
+/* @import 'components/button.css'; */
 
 /* Sections */
 @import 'sections/header.css';
-@import 'sections/hero.css';
-@import 'sections/about.css';
-@import 'sections/services.css';
+@import 'sections/portfolio.css';
 @import 'sections/contact.css';
 
 /* Utilities */

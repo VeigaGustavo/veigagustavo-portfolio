@@ -7,12 +7,11 @@
     <meta name="keywords" content="desenvolvimento web, e-commerce, consultoria, automação, programador, desenvolvedor, Tocantins">
     <meta name="author" content="Gustavo Antunes Veiga do Carmo">
     <meta name="theme-color" content="#6d28d9">
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     
     <title>Carmo.dev - Desenvolvimento Web e Soluções Digitais</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
     
     <!-- Preload -->
@@ -22,18 +21,13 @@
     <link rel="preload" href="assets/images/hero-image.png" as="image">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/fonts.css">
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/main.css">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- Portfolio CSS -->
-    <link rel="stylesheet" href="assets/css/sections/portfolio.css">
     
-    <!-- Contact CSS -->
-    <link rel="stylesheet" href="assets/css/sections/contact.css">
+    <!-- Scripts -->
+    <script src="assets/js/modules/menu.js" defer></script>
 </head>
 
 <body>
@@ -149,8 +143,21 @@
         <section id="portfolio" class="portfolio-section">
             <div class="container">
                 <h2 class="section-title">Portfólio</h2>
-                <div id="portfolio-cards" class="portfolio-cards">
-                    <!-- Os cards serão inseridos aqui pelo JS -->
+                
+                <!-- Work Pages Row -->
+                <div class="portfolio-row">
+                    <h3 class="portfolio-subtitle">Páginas e Projetos</h3>
+                    <div id="work-pages" class="portfolio-cards">
+                        <!-- Work pages will be inserted here by JS -->
+                    </div>
+                </div>
+
+                <!-- GitHub Repositories Row -->
+                <div class="portfolio-row">
+                    <h3 class="portfolio-subtitle">Repositórios GitHub</h3>
+                    <div id="portfolio-cards" class="portfolio-cards">
+                        <!-- GitHub repositories will be inserted here by JS -->
+                    </div>
                 </div>
             </div>
         </section>
@@ -231,6 +238,6 @@
 
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/main.js" type="module" defer></script>
 </body>
 </html>
