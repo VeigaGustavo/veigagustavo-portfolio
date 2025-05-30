@@ -243,12 +243,23 @@
 
 @media (max-width: 768px) {
     .portfolio-cards.swiper {
-        padding: 1rem;
-        margin: -1rem;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
     }
 
     .portfolio-cards .swiper-wrapper {
-        gap: 1rem;
+        gap: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .portfolio-cards .swiper-slide {
+        padding: 0 1rem;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .portfolio-cards .swiper-button-next,
@@ -259,10 +270,15 @@
     .portfolio-card {
         height: auto;
         min-height: 400px;
+        margin: 0;
+        width: 100%;
     }
 
     .portfolio-card-content {
         padding: 1rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
     }
 
     .portfolio-card-preview {
@@ -287,6 +303,11 @@
 
     .portfolio-card p {
         font-size: 1.2rem;
+    }
+
+    .portfolio-container {
+        padding: 0;
+        margin: 1rem 0;
     }
 }
 

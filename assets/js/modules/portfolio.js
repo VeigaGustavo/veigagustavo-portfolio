@@ -65,7 +65,7 @@ const initPortfolioCarousel = (container) => {
     new Swiper(container, {
         slidesPerView: 1,
         spaceBetween: 30,
-        loop: cards.length > 1, // Loop apenas se houver mais de 1 card
+        loop: cards.length > 1,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -77,9 +77,11 @@ const initPortfolioCarousel = (container) => {
         breakpoints: {
             768: {
                 slidesPerView: 2,
+                spaceBetween: 20,
             },
             1024: {
                 slidesPerView: 3,
+                spaceBetween: 30,
             },
         },
         grabCursor: true,
@@ -87,6 +89,13 @@ const initPortfolioCarousel = (container) => {
         touchAngle: 45,
         resistance: true,
         resistanceRatio: 0.85,
+        touchStartPreventDefault: false,
+        touchMoveStopPropagation: false,
+        watchSlidesProgress: true,
+        watchOverflow: true,
+        preventInteractionOnTransition: true,
+        observer: true,
+        observeParents: true,
     });
 };
 
