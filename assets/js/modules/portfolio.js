@@ -1,8 +1,8 @@
 // Portfolio GitHub Integration
 const projetosDestacados = [
-    "Dicasa",
-    "ListaTarefas",
-    "TabuadaJS",
+    "hospedagemHotelaria",
+    "linux_project1_iac",
+    "estacionamento",
     "linux-projeto2-iac",
     "universidade-atividade",
     "ProgCientifica"
@@ -11,26 +11,86 @@ const projetosDestacados = [
 // Array com as páginas de trabalho
 const paginasTrabalho = [
     {
-        nome: "E-commerce Dicasa",
-        descricao: "Loja virtual completa com gestão de produtos e pagamentos",
-        url: "https://dicasa.com.br",
-        preview: "https://dicasa.com.br"
+        nome: "Web Designer",
+        descricao: "Responsável pelo web design e apoio no desenvolvimento do site de divulgação do jogo Ahcha.",
+        url: "https://www.ahcha.com.br/",
+        preview: "https://www.ahcha.com.br/"
     },
     {
-        nome: "Lista de Tarefas",
-        descricao: "Aplicação web para gerenciamento de tarefas",
-        url: "https://listatarefas.com",
-        preview: "https://listatarefas.com"
+        nome: "Gestor/Dev de Ecommerce",
+        descricao: "Responsável pela gestão, desenvolvimento, intregrações e melhororias continuas no ecommerce da Fabiano Parafusos.",
+        url: "https://www.fabianoparafusos.com.br/",
+        preview: "https://www.fabianoparafusos.com.br/"
     },
     {
-        nome: "Tabuada JS",
-        descricao: "Aplicativo interativo para aprendizado de tabuada",
-        url: "https://tabuadajs.com",
-        preview: "https://tabuadajs.com"
+        nome: "Estudos",
+        descricao: "Jogo educativo da Cifra de Vigenère",
+        url: "https://veigagustavo.github.io/jogoCifra/",
+        preview: "https://veigagustavo.github.io/jogoCifra/"
+    },
+    {
+        nome: "Estudos",
+        descricao: "Aplicativo web de gerenciamento de tarefas no estilo Kanban",
+        url: "https://veigagustavo.github.io/ListaTarefas/",
+        preview: "https://veigagustavo.github.io/ListaTarefas/"
     }
+    /*,
+    {
+        nome: "",
+        descricao: "",
+        url: "",
+        preview: ""
+    }
+    */
 ];
 
-function renderWorkPages() {
+const initPortfolioCarousel = (container) => {
+    const cards = container.querySelectorAll('.portfolio-card');
+    
+    // Sempre ativar o carrossel para garantir o comportamento responsivo
+    container.classList.add('swiper', 'swiper-enabled');
+    container.innerHTML = `
+        <div class="swiper-wrapper">
+            ${Array.from(cards).map(card => `
+                <div class="swiper-slide">
+                    ${card.outerHTML}
+                </div>
+            `).join('')}
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    `;
+
+    new Swiper(container, {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: cards.length > 1, // Loop apenas se houver mais de 1 card
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+        },
+        grabCursor: true,
+        touchRatio: 1,
+        touchAngle: 45,
+        resistance: true,
+        resistanceRatio: 0.85,
+    });
+};
+
+const renderWorkPages = () => {
     const container = document.getElementById('work-pages');
     if (!container) return;
     
@@ -61,7 +121,9 @@ function renderWorkPages() {
         `;
         container.appendChild(card);
     });
-}
+
+    initPortfolioCarousel(container);
+};
 
 function renderPortfolioCards(repos) {
     const container = document.getElementById('portfolio-cards');
@@ -79,6 +141,12 @@ function renderPortfolioCards(repos) {
         card.innerHTML = `
             <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="portfolio-card-link">
                 <div class="portfolio-card-content">
+                    <div class="portfolio-card-preview">
+                        <div class="github-preview">
+                            <i class="fab fa-github"></i>
+                            <span>${repo.name}</span>
+                        </div>
+                    </div>
                     <h3>${repo.name}</h3>
                     <p>${repo.description || 'Sem descrição.'}</p>
                     <div class="portfolio-card-footer">
@@ -91,6 +159,8 @@ function renderPortfolioCards(repos) {
         `;
         container.appendChild(card);
     });
+
+    initPortfolioCarousel(container);
 }
 
 // Inicializar as duas seções do portfólio
