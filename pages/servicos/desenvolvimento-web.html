@@ -7,7 +7,7 @@
     <title>Desenvolvimento Web | Carmo.dev</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
+    <link rel="icon" type="image/png" href="../../assets/images/favicon.png">
     <link rel="apple-touch-icon" href="../../assets/images/apple-touch-icon.png">
 
     <!-- CSS -->
@@ -25,6 +25,29 @@
 </head>
 
 <body>
+    <!-- Navigation Icons -->
+    <div class="nav-icons">
+        <div class="nav-icon burger-menu" aria-label="Abrir menu" role="button" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="desenvolvimento-web.html">Desenvolvimento Web</a></li>
+            <li><a href="ecommerce.html">E-commerce</a></li>
+            <li><a href="automacao.html">Automação</a></li>
+            <li><a href="../../index.html#contato">Contato</a></li>
+        </ul>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
     <!-- Include Header -->
     <div id="header"></div>
 
@@ -192,6 +215,27 @@
         AOS.init({
             duration: 800,
             once: true
+        });
+
+        // Mobile Navigation
+        const burgerMenu = document.querySelector('.burger-menu');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const overlay = document.querySelector('.overlay');
+
+        function toggleMenu() {
+            burgerMenu.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        }
+
+        burgerMenu.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking a link
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
         });
     </script>
 </body>

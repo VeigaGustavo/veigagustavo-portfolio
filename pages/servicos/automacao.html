@@ -7,7 +7,7 @@
     <title>Automação | Carmo.dev</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
+    <link rel="icon" type="image/png" href="../../assets/images/favicon.png">
     <link rel="apple-touch-icon" href="../../assets/images/apple-touch-icon.png">
 
     <!-- CSS -->
@@ -25,6 +25,29 @@
 </head>
 
 <body>
+    <!-- Navigation Icons -->
+    <div class="nav-icons">
+        <div class="nav-icon burger-menu" aria-label="Abrir menu" role="button" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="desenvolvimento-web.html">Desenvolvimento Web</a></li>
+            <li><a href="ecommerce.html">E-commerce</a></li>
+            <li><a href="automacao.html">Automação</a></li>
+            <li><a href="../../index.html#contato">Contato</a></li>
+        </ul>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
     <!-- Include Header -->
     <div id="header"></div>
 
@@ -33,8 +56,8 @@
         <section class="service-hero" aria-label="Introdução do serviço">
             <div class="container">
                 <div class="service-hero-content" data-aos="fade-up">
-                    <h1 class="service-title">Automação</h1>
-                    <p class="service-subtitle">Automatize tarefas repetitivas e otimize seus processos com soluções personalizadas. Aumente sua produtividade e reduza erros.</p>
+                    <h1 class="page-title">Automação</h1>
+                    <p class="service-subtitle"><strong>Automatize tarefas repetitivas</strong> e otimize seus processos com soluções personalizadas. Aumente sua produtividade e reduza erros.</p>
                     
                     <div class="service-features" role="list">
                         <div class="service-feature" role="listitem" data-aos="fade-up" data-aos-delay="100">
@@ -63,12 +86,15 @@
                         <p>
                             <strong>Automação</strong> é o uso de tecnologia para executar tarefas e processos de forma automática, sem intervenção manual. Isso pode envolver desde scripts simples até sistemas complexos que integram diferentes plataformas.
                         </p>
+
                         <p>
                             Com automação, é possível <strong>eliminar tarefas repetitivas</strong>, <strong>reduzir erros</strong> e <strong>ganhar tempo</strong> para focar no que realmente importa para o seu negócio.
                         </p>
-                        <p>
+                        
+                        <p> 
                             As soluções de automação podem ser aplicadas em <strong>diversos setores</strong>: financeiro, marketing, atendimento, vendas, TI e muito mais.
                         </p>
+                            
                         <p>
                             O objetivo é sempre <strong>otimizar processos</strong>, <strong>aumentar a produtividade</strong> e <strong>reduzir custos</strong>.
                         </p>
@@ -189,6 +215,27 @@
         AOS.init({
             duration: 800,
             once: true
+        });
+
+        // Mobile Navigation
+        const burgerMenu = document.querySelector('.burger-menu');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const overlay = document.querySelector('.overlay');
+
+        function toggleMenu() {
+            burgerMenu.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        }
+
+        burgerMenu.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking a link
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
         });
     </script>
 </body>
