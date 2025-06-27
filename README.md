@@ -1,6 +1,6 @@
-# CarmoDev - Soluções Digitais
+# CVeiga.dev - Soluções Digitais
 
-Site institucional da CarmoDev, especializada em desenvolvimento web e automação. Oferecemos soluções digitais personalizadas para impulsionar seu negócio.
+Site institucional da Veiga.dev, especializada em desenvolvimento web e automação. Oferecemos soluções digitais personalizadas para impulsionar seu negócio.
 
 ## 🚀 Tecnologias
 
@@ -19,16 +19,6 @@ Site institucional da CarmoDev, especializada em desenvolvimento web e automaç�
 - Portfólio dinâmico com GitHub
 - Feedback tátil para mobile
 
-## 🛠️ Estrutura
-
-```
-├── assets/
-│   ├── css/
-│   ├── js/
-│   └── images/
-├── pages/
-└── index.html
-```
 
 ## 📱 Responsividade
 
@@ -44,19 +34,6 @@ Site institucional da CarmoDev, especializada em desenvolvimento web e automaç�
 - Event delegation
 - CSS modular
 - JavaScript otimizado
-
-## 🔧 Instalação
-
-1. Clone o repositório
-```bash
-git clone https://github.com/seu-usuario/carmodev.git
-```
-
-2. Abra o arquivo `index.html` em seu navegador
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## 👨‍💻 Autor
 
