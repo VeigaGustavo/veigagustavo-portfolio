@@ -6,30 +6,6 @@ import './modules/forms.js';
 import './modules/portfolio.js';
 import './modules/touch.js';
 
-// Configurações
-const CONFIG = {
-    headerOffset: 80
-};
-
-// Utilitários
-const utils = {
-    validateForm: (form) => {
-        const requiredFields = form.querySelectorAll('[required]');
-        let isValid = true;
-
-        requiredFields.forEach(field => {
-            if (!field.value.trim()) {
-                isValid = false;
-                field.classList.add('error');
-            } else {
-                field.classList.remove('error');
-            }
-        });
-
-        return isValid;
-    }
-};
-
 // Estilos de erro
 const style = document.createElement('style');
 style.textContent = `

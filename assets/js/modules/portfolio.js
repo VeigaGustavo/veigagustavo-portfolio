@@ -16,12 +16,7 @@ const paginasTrabalho = [
         url: "https://www.ahcha.com.br/",
         preview: "https://www.ahcha.com.br/"
     },
-    {
-        nome: "Gestor/Dev de Ecommerce",
-        descricao: "Responsável pela gestão, desenvolvimento, intregrações e melhororias continuas no ecommerce da Fabiano Parafusos.",
-        url: "https://www.fabianoparafusos.com.br/",
-        preview: "https://www.fabianoparafusos.com.br/"
-    },
+
     {
         nome: "Estudos",
         descricao: "Jogo educativo da Cifra de Vigenère",
@@ -46,8 +41,8 @@ const paginasTrabalho = [
 
 const initPortfolioCarousel = (container) => {
     const cards = container.querySelectorAll('.portfolio-card');
+    const slidesCount = cards.length;
     
-    // Sempre ativar o carrossel para garantir o comportamento responsivo
     container.classList.add('swiper', 'swiper-enabled');
     container.innerHTML = `
         <div class="swiper-wrapper">
@@ -62,10 +57,13 @@ const initPortfolioCarousel = (container) => {
         <div class="swiper-pagination"></div>
     `;
 
+    // Determina o loop dinamicamente para cada breakpoint
+    const getLoop = (slidesPerView) => slidesCount > slidesPerView;
+
     new Swiper(container, {
         slidesPerView: 1,
         spaceBetween: 30,
-        loop: cards.length > 1,
+        loop: getLoop(1),
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -78,10 +76,12 @@ const initPortfolioCarousel = (container) => {
             768: {
                 slidesPerView: 2,
                 spaceBetween: 20,
+                loop: getLoop(2),
             },
             1024: {
                 slidesPerView: 3,
                 spaceBetween: 30,
+                loop: getLoop(3),
             },
         },
         grabCursor: true,
