@@ -2,7 +2,6 @@
 import './modules/menu.js';
 import './modules/scroll.js';
 import './modules/observer.js';
-import './modules/forms.js';
 import './modules/portfolio.js';
 import './modules/touch.js';
 
