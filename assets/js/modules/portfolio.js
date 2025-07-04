@@ -1,8 +1,8 @@
 // Portfolio GitHub Integration
 const projetosDestacados = [
-    "hospedagemHotelaria",
+    "login",
     "linux_project1_iac",
-    "estacionamento",
+    "workshop-springboot3-jpa",
     "linux-projeto2-iac",
     "universidade-atividade",
     "ProgCientifica"
