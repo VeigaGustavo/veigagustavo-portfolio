@@ -13,6 +13,11 @@
     --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 }
 
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 /* Hero Section Melhorada */
 .service-hero {
     background: var(--gradient-primary);
@@ -29,7 +34,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('../../assets/images/pattern.svg');
+    background: url('/assets/images/pattern.svg');
     opacity: 0.1;
     animation: patternMove 20s linear infinite;
 }
@@ -690,14 +695,9 @@
 }
 
 @media (max-width: 600px) {
-  .service-details,
-  .process-section,
-  .quote-hero,
-  .service-cta {
-    padding: 1.5rem 0;
-  }
-  .service-grid {
-    gap: 1rem;
-    margin: 1rem 0;
+  .container, .service-hero, .service-features, .service-feature {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
   }
 } 
