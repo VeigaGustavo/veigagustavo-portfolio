@@ -675,3 +675,29 @@
         height: 38px;
     }
 } 
+
+@media (max-width: 1024px) {
+  .service-details,
+  .process-section,
+  .quote-hero,
+  .service-cta {
+    padding: 3rem 0;
+  }
+  .service-grid {
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .service-details,
+  .process-section,
+  .quote-hero,
+  .service-cta {
+    padding: 1.5rem 0;
+  }
+  .service-grid {
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+} 
