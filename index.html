@@ -28,7 +28,6 @@
     <link rel="preload" href="assets/css/fonts.css" as="style">
     <link rel="preload" href="assets/css/reset.css" as="style">
     <link rel="preload" href="assets/css/style.css" as="style">
-    <link rel="preload" href="assets/images/hero-image.png" as="image">
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
@@ -97,9 +96,16 @@
                         <a href="#servicos" class="btn btn-outline">Conheça meus serviços</a>
                     </div>
                 </div>
-                <div class="hero-image-wrapper">
-                    <img src="assets/images/hero-image.png" alt="Ilustração de desenvolvimento web" class="hero-image" width="600" height="400">
+                <div class="editor-window">
+                    <div class="editor-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="filename">skills.js</span>
+                    </div>
+                    <pre class="code-block"><code id="code"></code></pre>
                 </div>
+                <script src="assets/js/modules/skills.js"></script>
             </div>
         </section>
 

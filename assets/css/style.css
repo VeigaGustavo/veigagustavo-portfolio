@@ -281,13 +281,16 @@ h1, h2, h3, h4, h5, h6 {
 .hero-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 4rem;
+    justify-content: center;
+    gap: 0;
+    flex-direction: column;
+    text-align: center;
 }
 
 .hero-content {
-    flex: 1;
-    max-width: 600px;
+    flex: none;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .hero-title {
