@@ -1,8 +1,8 @@
 const gustavoAntunes = {
   technologies: {
     frontEnd: {
-      languages: ["JavaScript", "Python", "Java"],
-      frameworks: ["React"],
+      languages: ["JavaScript", "Python", "Java", "Dart"],
+      frameworks: ["React", "Flutter"],
       styling: ["Bootstrap", "Styled Components"]
     },
     backEnd: {
