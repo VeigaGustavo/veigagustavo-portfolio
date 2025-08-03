@@ -7,7 +7,7 @@ const gustavoAntunes = {
     },
     backEnd: {
       languages: ["JavaScript", "Python", "Java"],
-      frameworks: ["Node.js", "Express", "Spring"]
+      frameworks: ["Node.js", "Express", "Spring boot"]
     },
     databases: ["MongoDB", "MySQL", "PostgreSQL"],
     devOps: ["Linux", "Git", "Docker"]
